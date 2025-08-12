@@ -65,7 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
               animate={{ scale: 1 }}
               className="bg-gradient-to-r from-[#00FF7F] to-[#00E5FF] text-black px-3 py-1 rounded-full text-xs font-black shadow-lg flex items-center gap-1"
             >
-              <FontAwesomeIcon icon="sparkles" />
+              <FontAwesomeIcon icon="magic" />
               NOVO
             </motion.span>
           )}
