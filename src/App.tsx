@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import CategoryGrid from './components/CategoryGrid';
 import ProductGrid from './components/ProductGrid';
+import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import FloatingSupportButton from './components/FloatingSupportButton';
 import ScrollToTop from './components/ScrollToTop';
@@ -21,6 +22,7 @@ function App() {
         subtitle="Descubra as peças que estão fazendo sucesso"
         limit={8}
       />
+      <Newsletter />
     </>
   );
 
