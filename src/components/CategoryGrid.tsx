@@ -44,7 +44,7 @@ const CategoryGrid: React.FC = () => {
             CATEGORIAS
           </motion.h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            <FontAwesomeIcon icon="sparkles" className="mr-2 text-[#FF6B35]" />
+            <FontAwesomeIcon icon="magic" className="mr-2 text-[#FF6B35]" />
             Encontre seu estilo perfeito em nossa seleção exclusiva
           </p>
         </motion.div>
@@ -123,7 +123,7 @@ const CategoryGrid: React.FC = () => {
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             className="w-16 h-16 border-4 border-dashed border-gray-300 rounded-full flex items-center justify-center"
           >
-            <FontAwesomeIcon icon="sparkles" className="text-[#00FF7F] text-xl" />
+            <FontAwesomeIcon icon="magic" className="text-[#00FF7F] text-xl" />
           </motion.div>
         </div>
       </div>
