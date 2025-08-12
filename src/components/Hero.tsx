@@ -137,9 +137,9 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            <FontAwesomeIcon icon="sparkles" className="mr-2 text-[#00FF7F]" />
+            <FontAwesomeIcon icon="magic" className="mr-2 text-[#00FF7F]" />
             Descubra as últimas tendências da moda urbana com peças exclusivas inspiradas na cultura street de Porto Alegre
-            <FontAwesomeIcon icon="sparkles" className="ml-2 text-[#FF6B35]" />
+            <FontAwesomeIcon icon="magic" className="ml-2 text-[#FF6B35]" />
           </motion.p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -246,7 +246,7 @@ const Hero: React.FC = () => {
           <span className="text-sm mb-2">Role para baixo</span>
           <FontAwesomeIcon icon="chevron-down" className="text-lg" />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
