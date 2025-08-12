@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               </h3>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              <FontAwesomeIcon icon="sparkles" className="mr-2 text-[#00FF7F]" />
+              <FontAwesomeIcon icon="magic" className="mr-2 text-[#00FF7F]" />
               Streetwear premium inspirado na cultura urbana de Porto Alegre. Estilo, qualidade e autenticidade em cada peça.
             </p>
             <div className="flex gap-3">
@@ -238,7 +238,6 @@ const Footer: React.FC = () => {
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
         />
-        </div>
       </div>
     </footer>
   );
