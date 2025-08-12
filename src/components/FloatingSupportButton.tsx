@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { MessageCircle, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const FloatingSupportButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,13 +13,19 @@ const FloatingSupportButton: React.FC = () => {
     <>
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 bg-[#00FF7F] p-4 rounded-full shadow-lg hover:bg-[#00FF7F]/90 transition-colors"
-        whileHover={{ scale: 1.05 }}
+        className="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-[#00FF7F] to-[#00E5FF] p-4 rounded-full shadow-2xl hover:shadow-[#00FF7F]/50 transition-all"
+        whileHover={{ scale: 1.1, rotate: 5 }}
         whileTap={{ scale: 0.95 }}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
+        style={{
+          background: 'linear-gradient(45deg, #00FF7F, #00E5FF)',
+        }}
       >
-        <MessageCircle size={24} className="text-black" />
+        <FontAwesomeIcon icon="headset" className="text-black text-xl" />
+        
+        {/* Pulse animation */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00FF7F] to-[#00E5FF] animate-ping opacity-30" />
       </motion.button>
 
       <AnimatePresence>
@@ -36,49 +42,81 @@ const FloatingSupportButton: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
-              className="fixed bottom-24 right-6 w-80 bg-white rounded-2xl shadow-xl z-50 overflow-hidden"
+              className="fixed bottom-24 right-6 w-80 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl z-50 overflow-hidden border border-gray-200/50"
             >
-              <div className="bg-[#00FF7F] p-4">
+              <div className="bg-gradient-to-r from-[#00FF7F] to-[#00E5FF] p-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-bold text-black">Precisa de Ajuda?</h3>
-                  <button
+                  <div className="flex items-center gap-2">
+                    <FontAwesomeIcon icon="headset" className="text-black text-lg" />
+                    <h3 className="font-black text-black">Precisa de Ajuda?</h3>
+                  </div>
+                  <motion.button
                     onClick={() => setIsOpen(false)}
-                    className="p-1 hover:bg-black/10 rounded-lg transition-colors"
+                    className="p-2 hover:bg-black/10 rounded-lg transition-all"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <X size={20} className="text-black" />
-                  </button>
+                    <FontAwesomeIcon icon="times" className="text-black" />
+                  </motion.button>
                 </div>
-                <p className="text-sm text-black/80 mt-1">
+                <p className="text-sm text-black/80 mt-2 flex items-center gap-2">
+                  <FontAwesomeIcon icon="sparkles" />
                   Nossa equipe está pronta para te atender!
                 </p>
               </div>
               
-              <div className="p-4 space-y-3">
-                <button
+              <div className="p-6 space-y-4">
+                <motion.button
                   onClick={handleWhatsAppClick}
-                  className="w-full bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition-colors flex items-center gap-3"
+                  className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all flex items-center gap-3 group"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <MessageCircle size={20} />
+                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <FontAwesomeIcon icon={['fab', 'whatsapp']} className="text-xl" />
+                  </div>
                   <div className="text-left">
-                    <div className="font-medium">WhatsApp</div>
+                    <div className="font-bold">WhatsApp</div>
                     <div className="text-sm opacity-90">(51) 99369-3721</div>
                   </div>
-                </button>
+                  <FontAwesomeIcon icon="arrow-right" className="ml-auto group-hover:translate-x-1 transition-transform" />
+                </motion.button>
                 
-                <button
+                <motion.button
                   onClick={() => window.location.href = 'tel:5551993693721'}
-                  className="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-3"
+                  className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center gap-3 group"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <Phone size={20} />
+                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <FontAwesomeIcon icon="phone" className="text-xl" />
+                  </div>
                   <div className="text-left">
-                    <div className="font-medium">Telefone</div>
+                    <div className="font-bold">Telefone</div>
                     <div className="text-sm opacity-90">(51) 99369-3721</div>
                   </div>
-                </button>
+                  <FontAwesomeIcon icon="arrow-right" className="ml-auto group-hover:translate-x-1 transition-transform" />
+                </motion.button>
                 
-                <div className="text-center pt-2">
-                  <p className="text-xs text-gray-500">
-                    Atendimento: Seg-Sex 9h às 18h
+                <motion.button
+                  className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-4 rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all flex items-center gap-3 group"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <FontAwesomeIcon icon="envelope" className="text-xl" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-bold">Email</div>
+                    <div className="text-sm opacity-90">dudupiazza16@gmail.com</div>
+                  </div>
+                  <FontAwesomeIcon icon="arrow-right" className="ml-auto group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+                
+                <div className="text-center pt-4 border-t border-gray-200">
+                  <p className="text-xs text-gray-500 flex items-center justify-center gap-2">
+                    <FontAwesomeIcon icon="clock" className="text-[#00FF7F]" />
+                    Atendimento: Seg-Sex 9h às 18h • Sáb 9h às 14h
                   </p>
                 </div>
               </div>
