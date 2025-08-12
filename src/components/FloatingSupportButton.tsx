@@ -60,7 +60,7 @@ const FloatingSupportButton: React.FC = () => {
                   </motion.button>
                 </div>
                 <p className="text-sm text-black/80 mt-2 flex items-center gap-2">
-                  <FontAwesomeIcon icon="sparkles" />
+                  <FontAwesomeIcon icon="magic" />
                   Nossa equipe está pronta para te atender!
                 </p>
               </div>
